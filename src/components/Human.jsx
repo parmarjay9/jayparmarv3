@@ -56,7 +56,7 @@ export default function Human() {
   return (
     <section id="human" className="border-b border-line py-[74px]">
       <div className="mx-auto max-w-content px-7">
-        <div className="reveal mb-[26px] font-mono text-[12.5px] text-terracotta">// off the clock</div>
+        <div className="reveal mb-[26px] font-mono text-[12.5px] text-terracotta">// side quests</div>
         <div className="grid gap-5 md:grid-cols-3">
           {NOTES.map((n, i) => (
             <div
