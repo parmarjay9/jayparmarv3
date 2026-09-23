@@ -1,6 +1,6 @@
 # Jay Parmar Portfolio
 
-A warm, editorial coding portfolio. React + Vite + Tailwind CSS.
+A warm portfolio. React + Vite + Tailwind CSS.
 
 ## Run
 
