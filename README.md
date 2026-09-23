@@ -19,7 +19,7 @@ src/
   main.jsx                 # entry
   App.jsx                  # layout + scroll-reveal observer
   index.css                # Tailwind layers + grain / sticky-note / reveal CSS
-  data.js                  # ← edit ALL content + links here
+  data.js                  # ALL content + links here
   components/
     Nav.jsx                # sticky nav, smooth-scroll, mobile menu
     Ticker.jsx
