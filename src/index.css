@@ -38,6 +38,9 @@
   .reveal.in {
     @apply translate-y-0 opacity-100;
   }
+  .reveal.revealed {
+    transition-delay: 0ms !important; /* beats the inline stagger delay */
+  }
   @media (prefers-reduced-motion: reduce) {
     .reveal {
       @apply translate-y-0 opacity-100 transition-none;
@@ -46,7 +49,8 @@
 
   /* project card hover takes the card's own accent (--c) */
   .project-card {
-    @apply transition duration-[250ms];
+    @apply transition duration-300 ease-out;
+    will-change: transform; /* move the card as one layer so text and borders don't snap mid-animation */
   }
   .project-card:hover {
     transform: translateY(-4px);

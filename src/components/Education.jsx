@@ -1,6 +1,21 @@
 import { useState } from "react";
 import { EDUCATION } from "../data.js";
 
+function Courses({ list }) {
+  return (
+    <div className="mt-4 border-t border-line pt-4">
+      <div className="mb-2.5 font-mono text-[11px] uppercase tracking-wide text-faint">Relevant coursework</div>
+      <div className="flex flex-wrap gap-1.5">
+        {list.map((c, k) => (
+          <span key={k} className="rounded-[3px] bg-codebg px-2.5 py-[5px] font-mono text-[11.5px] text-ink">
+            {c}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function EduCard({ e, i }) {
   const [open, setOpen] = useState(false);
 
@@ -32,7 +47,9 @@ function EduCard({ e, i }) {
         <span className="rounded-[3px] bg-codebg px-2.5 py-1">{e.place}</span>
       </div>
 
-      {e.courses?.length > 0 && (
+      {e.courses?.length > 0 && e.showCourses && <Courses list={e.courses} />}
+
+      {e.courses?.length > 0 && !e.showCourses && (
         <>
           <button
             onClick={() => setOpen((o) => !o)}
@@ -42,18 +59,7 @@ function EduCard({ e, i }) {
             <span className={"transition-transform " + (open ? "rotate-180" : "")} aria-hidden="true">⌄</span>
           </button>
 
-          {open && (
-            <div className="mt-4 border-t border-line pt-4">
-              <div className="mb-2.5 font-mono text-[11px] uppercase tracking-wide text-faint">Relevant coursework</div>
-              <div className="flex flex-wrap gap-1.5">
-                {e.courses.map((c, k) => (
-                  <span key={k} className="rounded-[3px] bg-codebg px-2.5 py-[5px] font-mono text-[11.5px] text-ink">
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
+          {open && <Courses list={e.courses} />}
         </>
       )}
     </div>

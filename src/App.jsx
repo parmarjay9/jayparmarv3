@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import Nav from "./components/Nav.jsx";
 import Ticker from "./components/Ticker.jsx";
 import Hero from "./components/Hero.jsx";
-import Skills from "./components/Skills.jsx";
-import Experience from "./components/Experience.jsx";
 import Projects from "./components/Projects.jsx";
+import Experience from "./components/Experience.jsx";
 import Education from "./components/Education.jsx";
-import Human from "./components/Human.jsx";
+import Skills from "./components/Skills.jsx";
+import SideQuests from "./components/SideQuests.jsx";
 import Footer from "./components/Footer.jsx";
 import ScrollProgress from "./components/ScrollProgress.jsx";
 import BackToTop from "./components/BackToTop.jsx";
@@ -35,6 +35,8 @@ export default function App() {
         entries.forEach((e) => {
           if (e.isIntersecting) {
             e.target.classList.add("in");
+            // once revealed, drop the stagger delay so hover effects respond instantly
+            e.target.addEventListener("transitionend", () => e.target.classList.add("revealed"), { once: true });
             io.unobserve(e.target);
           }
         }),
@@ -52,11 +54,11 @@ export default function App() {
       <Ticker />
       <main>
         <Hero photos={photos} addPhoto={addPhoto} />
-        <Skills />
         <Projects />
-        <Education />
         <Experience />
-        <Human />
+        <Education />
+        <Skills />
+        <SideQuests />
         <Footer onBuild={() => setBuildOpen(true)} />
       </main>
       <BackToTop />

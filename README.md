@@ -26,7 +26,7 @@ src/
     Hero.jsx               # about
     Experience.jsx
     Projects.jsx           # GitHub + live-demo links, per-card hover color
-    Human.jsx              # YouTube + photography
+    SideQuests.jsx         # YouTube + photography
     Footer.jsx
     ScrollProgress.jsx
     BackToTop.jsx

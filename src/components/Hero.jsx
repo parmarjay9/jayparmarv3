@@ -38,9 +38,9 @@ export default function Hero({ photos = [], addPhoto }) {
               track, building web and iOS applications and the machine-learning systems that power them.
             </p>
             <p className="mb-4 max-w-[46ch] text-[#3b342c]">
-              Originally from <PlaceBtn onClick={() => addPhoto?.("bombay")}>Bombay</PlaceBtn> and now based in{" "}
+              Originally from <PlaceBtn onClick={() => addPhoto?.("mumbai")}>Mumbai</PlaceBtn> and now based in{" "}
               <PlaceBtn onClick={() => addPhoto?.("tempe")}>Tempe, Arizona</PlaceBtn>, I care about software
-              that's thoughful, and genuinely useful.
+              that's thoughtful and genuinely useful.
             </p>
             <div className="mt-[20px] font-serif text-xl italic text-muted">
               "Build the thing you'd actually use."

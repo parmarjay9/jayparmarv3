@@ -1,5 +1,5 @@
-import { useEffect } from "react";
 import { LAST_UPDATED } from "../data.js";
+import useModal from "./useModal.js";
 
 const STICKY_BG = "#f6e58d";
 
@@ -12,11 +12,7 @@ const STICKIES = [
 ];
 
 export default function BuildNotes({ open, onClose }) {
-  useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && onClose();
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [onClose]);
+  const dialog = useModal(open, onClose);
 
   if (!open) return null;
 
@@ -25,7 +21,7 @@ export default function BuildNotes({ open, onClose }) {
       onClick={(e) => e.target === e.currentTarget && onClose()}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/50 p-6 backdrop-blur-sm"
     >
-      <div className="relative flex max-w-[560px] flex-wrap items-start justify-center gap-[18px]">
+      <div {...dialog} aria-label="Build notes" className="relative flex max-w-[560px] flex-wrap items-start justify-center gap-[18px] outline-none">
         <button aria-label="Close" onClick={onClose} className="absolute -right-1 -top-10 text-[22px] text-white">
           ✕
         </button>
