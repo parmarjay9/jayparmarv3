@@ -41,7 +41,7 @@ export const PROJECTS = [
     demo: "",
     color: "#ac5e3c",
     gradient: "linear-gradient(120deg,#b56a44,#7e4a2e)",
-    screenshots: ["/screenshots/leftoverlab-1.png", "/screenshots/leftoverlab-2.png", "/screenshots/leftoverlab-3.png"],
+    screenshots: [1, 2, 3, 4].map((n) => `/screenshots/leftoverlab-${n}.jpg`),
   },
   // {
   //   badge: "ML",
@@ -64,7 +64,7 @@ export const PROJECTS = [
     // demo: "https://your-demo-link.com",
     color: "#7160a3",
     gradient: "linear-gradient(120deg,#8a7bbf,#52447e)",
-    screenshots: ["/screenshots/trustbin-1.png", "/screenshots/trustbin-2.png", "/screenshots/trustbin-3.png"],
+    screenshots: [1, 2, 3, 4].map((n) => `/screenshots/trustbin-${n}.jpg`),
   },
   {
     badge: "LLM · Google Colab",
